@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - M. Khafidz Abdullah</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animasi Kustom */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1e293b; 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-40 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer flex items-center gap-2">
+                    <div class="w-10 h-10 rounded bg-emerald-500 flex items-center justify-center text-white font-bold text-xl">M</div>
+                    <a href="#beranda" class="text-xl font-bold text-white tracking-tight hidden sm:block">M. Khafidz Abdullah<span class="text-emerald-500">.</span></a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#beranda" class="hover:text-emerald-400 text-white transition-colors">Beranda</a>
+                    <a href="#tentang" class="hover:text-emerald-400 transition-colors">Tentang</a>
+                    <a href="#pendidikan" class="hover:text-emerald-400 transition-colors">Pendidikan</a>
+                    <a href="#pengalaman" class="hover:text-emerald-400 transition-colors">Pengalaman</a>
+                    <a href="#dokumentasi" class="hover:text-emerald-400 transition-colors">Dokumentasi</a>
+                    <a href="#kontak" class="hover:text-emerald-400 transition-colors">Kontak</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden items-center gap-4">
+                    <a href="https://wa.me/6285230224618" target="_blank" class="bg-emerald-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium"><i class="fab fa-whatsapp"></i></a>
+                    <button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-slate-800 border-b border-slate-700 absolute w-full" id="mobile-menu">
+            <div class="px-4 pt-2 pb-4 space-y-2 text-base font-medium shadow-lg">
+                <a href="#beranda" class="block px-3 py-2 rounded-md hover:bg-slate-700 text-white mobile-link">Beranda</a>
+                <a href="#tentang" class="block px-3 py-2 rounded-md hover:bg-slate-700 mobile-link">Tentang</a>
+                <a href="#pendidikan" class="block px-3 py-2 rounded-md hover:bg-slate-700 mobile-link">Pendidikan</a>
+                <a href="#pengalaman" class="block px-3 py-2 rounded-md hover:bg-slate-700 mobile-link">Pengalaman</a>
+                <a href="#dokumentasi" class="block px-3 py-2 rounded-md hover:bg-slate-700 mobile-link">Dokumentasi</a>
+                <a href="#kontak" class="block px-3 py-2 rounded-md hover:bg-slate-700 mobile-link">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Beranda / Hero Section -->
+    <section id="beranda" class="min-h-screen flex items-center pt-24 pb-12 relative">
+        <div class="absolute top-1/4 left-0 w-96 h-96 bg-emerald-600/20 rounded-full blur-[120px] -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-900/20 rounded-full blur-[100px] -z-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Kolom Kiri: Teks & CTA -->
+                <div class="lg:col-span-7 animate-fade-in order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 mb-6 backdrop-blur-sm">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <span class="text-sm font-medium text-slate-300">Siap Berkontribusi </span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.1]">
+                        Halo, Saya <br>
+                        <span class="text-emerald-500">M. Khafidz Abdullah,</span><br>
+                        S.Kom.
+                    </h1>
+
+                    <p class="text-lg text-slate-400 mb-8 max-w-2xl leading-relaxed">
+                        Lulusan S1 Teknik Informatika di Universitas Islam Lamongan. Berfokus pada pengembangan perangkat lunak, analisis sentimen, serta tata kelola organisasi yang siap memberikan solusi teknologi.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-4 mb-10 max-w-xl">
+                        <div class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-4 text-center backdrop-blur-sm hover:border-emerald-500/50 transition-colors">
+                            <div class="text-2xl sm:text-3xl font-bold text-emerald-400 mb-1">S1</div>
+                            <div class="text-xs sm:text-sm text-slate-400 font-medium">Teknik Informatika</div>
+                        </div>
+                        <div class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-4 text-center backdrop-blur-sm hover:border-emerald-500/50 transition-colors">
+                            <div class="text-2xl sm:text-3xl font-bold text-emerald-400 mb-1">3,68</div>
+                            <div class="text-xs sm:text-sm text-slate-400 font-medium">IPK Kelulusan</div>
+                        </div>
+                        <div class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-4 text-center backdrop-blur-sm hover:border-emerald-500/50 transition-colors">
+                            <div class="text-2xl sm:text-3xl font-bold text-emerald-400 mb-1">2026</div>
+                            <div class="text-xs sm:text-sm text-slate-400 font-medium">Tahun Kelulusan</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                        <a href="https://wa.me/6285230224618?text=Halo%20Khafidz,%20saya%20tertarik%20dengan%20profil%20Anda" target="_blank" class="px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all text-center flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/20">
+                            <i class="fab fa-whatsapp text-xl"></i> Hubungi via WA
+                        </a>
+                        <button onclick="openModal()" class="px-8 py-3.5 rounded-xl bg-slate-800/50 border border-emerald-500/30 hover:border-emerald-500 hover:bg-slate-800 text-white font-semibold transition-all text-center flex items-center justify-center gap-2 backdrop-blur-sm group">
+                            <i class="fas fa-file-pdf text-red-400 group-hover:text-red-300"></i> Pratinjau / Unduh CV
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-6 text-sm font-medium text-slate-400">
+                        <a href="https://www.linkedin.com/in/m-khafidz-abdullah-aa0599443" target="_blank" class="hover:text-emerald-400 transition-colors flex items-center gap-2">
+                            <i class="fab fa-linkedin text-lg text-[#0A66C2]"></i> LinkedIn Profile
+                        </a>
+                        <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=mkhafidabdullah@gmail.com&su=Tawaran+Kerja+-+Portofolio&tf=cm" class="hover:text-emerald-400 transition-colors flex items-center gap-2">
+                            <i class="fas fa-envelope text-lg text-emerald-500"></i> Email Direct
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Kolom Kanan: Kartu Profil Glassmorphism -->
+                <div class="lg:col-span-5 animate-fade-in order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="w-full max-w-md backdrop-blur-lg bg-white/[0.03] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] relative overflow-hidden group">
+                        <div class="absolute -top-20 -right-20 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl group-hover:bg-emerald-500/30 transition-all duration-500"></div>
+                        
+                        <div class="flex flex-col items-center mb-8 relative z-10">
+                            <div class="w-32 h-40 rounded-2xl overflow-hidden border-2 border-slate-700 mb-4 shadow-xl">
+                                <img src="D:\web_portofolio\img\profile\my_profile.jpg" alt="M. Khafidz" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-white bg-slate-900/80 px-4 py-1.5 rounded-lg border border-slate-700/50 backdrop-blur-md">
+                                M. Khafidz Abdullah
+                            </h3>
+                        </div>
+
+                        <div class="space-y-4 mb-8 relative z-10">
+                            <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500 font-medium mb-0.5">Pendidikan</div>
+                                    <div class="text-sm text-slate-200 font-semibold">Universitas Islam Lamongan (2022-2026)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500 font-medium mb-0.5">Domisili</div>
+                                    <div class="text-sm text-slate-200 font-semibold">Lamongan, Jawa Timur</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500 font-medium mb-0.5">Pengalaman</div>
+                                    <div class="text-sm text-slate-200 font-semibold leading-tight">Kerja Lapangan (PKL) SMK NU 1 Kedungpring</div>
+                                    <div class="text-sm text-slate-200 font-semibold leading-tight">Karyawan Toko Rafa Tirta</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Section (Termasuk Keahlian) -->
+    <section id="tentang" class="py-20 bg-slate-800/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                <span class="text-emerald-500 mr-2">#</span>Tentang Saya
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Deskripsi Pribadi -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Mengenal Lebih Dekat</h3>
+                    <p class="text-slate-400 leading-relaxed mb-4">
+                        Saya merupakan lulusan program studi S1 Teknik Informatika di Universitas Islam Lamongan. Memiliki ketertarikan mendalam pada pengembangan perangkat lunak web dan bidang kecerdasan buatan, terkhusus pada <em>Natural Language Processing</em> (NLP) dan analisis sentimen data.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Selain aktif di ranah akademis, saya gemar melatih jiwa kepemimpinan dan manajemen waktu melalui keterlibatan aktif di organisasi, seperti UKM Pencak Silat Pagar Nusa. Saya siap beradaptasi dengan lingkungan dinamis dan bekerja keras mencapai target perusahaan.
+                    </p>
+                </div>
+                
+                <!-- Keahlian -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-700 pb-2">Keahlian & Spesialisasi Teknis</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-300 hover:border-emerald-500 hover:text-white transition-all cursor-default shadow-md flex items-center gap-2">
+                            <i class="fab fa-python text-emerald-500"></i> Python
+                        </div>
+                        <div class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-300 hover:border-emerald-500 hover:text-white transition-all cursor-default shadow-md flex items-center gap-2">
+                            <i class="fas fa-pepper-hot text-emerald-500"></i> Flask
+                        </div>
+                        <div class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-300 hover:border-emerald-500 hover:text-white transition-all cursor-default shadow-md flex items-center gap-2">
+                            <i class="fab fa-laravel text-emerald-500"></i> Laravel
+                        </div>
+                        <div class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-300 hover:border-emerald-500 hover:text-white transition-all cursor-default shadow-md flex items-center gap-2">
+                            <i class="fas fa-language text-emerald-500"></i> NLP
+                        </div>
+                        <div class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-300 hover:border-emerald-500 hover:text-white transition-all cursor-default shadow-md flex items-center gap-2">
+                            <i class="fas fa-chart-line text-emerald-500"></i> SVM & Naïve Bayes
+                        </div>
+                        <div class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-300 hover:border-emerald-500 hover:text-white transition-all cursor-default shadow-md flex items-center gap-2">
+                            <i class="fas fa-project-diagram text-emerald-500"></i> K-NN
+                        </div>
+                        <div class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-300 hover:border-emerald-500 hover:text-white transition-all cursor-default shadow-md flex items-center gap-2">
+                            <i class="fas fa-pen-nib text-emerald-500"></i> Technical Writing
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pendidikan Section -->
+    <section id="pendidikan" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                <span class="text-emerald-500 mr-2">#</span>Riwayat Akademis
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- Universitas -->
+                <div class="bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-700 hover:border-emerald-500 transition-all flex items-start gap-6 group">
+                    <div class="hidden sm:flex w-16 h-16 rounded-xl bg-slate-900 border border-slate-700 items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors flex-shrink-0">
+                        <i class="fas fa-university text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-emerald-400 font-mono text-sm mb-1">2022 – 2026</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Universitas Islam Lamongan</h3>
+                        <p class="text-slate-300 font-medium mb-2">S1 Teknik Informatika</p>
+                        <p class="text-slate-400 text-sm">Menyelesaikan studi sarjana dengan nilai akhir kelulusan (IPK) 3,68. Memiliki spesialisasi pada rekayasa perangkat lunak dan analisis sentimen komentar publik menggunakan machine learning.</p>
+                    </div>
+                </div>
+
+                <!-- SD -->
+                <div class="bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-700 hover:border-emerald-500 transition-all flex items-start gap-6 group">
+                    <div class="hidden sm:flex w-16 h-16 rounded-xl bg-slate-900 border border-slate-700 items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors flex-shrink-0">
+                        <i class="fas fa-school text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-emerald-400 font-mono text-sm mb-1">2019 – 2022 </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Sekolah Menengah Atas (SMA)</h3>
+                        <p class="text-slate-300 font-medium">SMA NEGERI 1 BABAT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengalaman Section (Sebelumnya Proyek) -->
+    <section id="pengalaman" class="py-20 bg-slate-800/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                <span class="text-emerald-500 mr-2">#</span>Pengalaman & Proyek
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Skripsi -->
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-emerald-500 transition-all flex flex-col h-full group shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white leading-tight">Tugas Akhir / Skripsi</h3>
+                    </div>
+                    <h4 class="text-lg font-semibold text-emerald-400 mb-3">Analisis Sentimen Komentar Publik pada Akun X @KemenkeuRI Menggunakan SVM</h4>
+                    <p class="text-slate-400 leading-relaxed mb-6 flex-grow">
+                        Penelitian yang berfokus pada klasifikasi opini publik di platform X terhadap Kementerian Keuangan. Sistem dibangun berbasis bahasa pemrograman Python dengan *framework* Flask, mencapai tingkat akurasi model klasifikasi sebesar <strong>88.78%</strong>.
+                    </p>
+                </div>
+
+                <!-- Riset NLP -->
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-emerald-500 transition-all flex flex-col h-full group shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i class="fas fa-search text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white leading-tight">Riset Pengolahan Bahasa Alami (NLP)</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-400 flex-grow">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-200 block">Analisis Sentimen Tokopedia</strong>
+                                Menggunakan algoritma klasifikasi <em>Naïve Bayes</em> untuk ekstraksi pola sentimen positif dan negatif.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                            <div>
+                                <strong class="text-slate-200 block">Klasifikasi Komentar YouTube</strong>
+                                Menerapkan algoritma <em>K-Nearest Neighbors (K-NN)</em> dan menggunakan <em>IndoBERT</em> sebagai metode word embedding.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Organisasi -->
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-emerald-500 transition-all flex flex-col h-full group shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white leading-tight">Pengurus UKM Pencak Silat Pagar Nusa</h3>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-4 flex-grow">
+                        Aktif sebagai pengurus dan koordinator, serta turut merancang <strong>Sistem Pendukung Keputusan (SPK)</strong> menggunakan metode <em>Simple Additive Weighting (SAW)</em> untuk objektivitas seleksi dan penjaringan atlet pusat pelatihan.
+                    </p>
+                </div>
+
+                <!-- KKN / Pengabdian -->
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-emerald-500 transition-all flex flex-col h-full group shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i class="fas fa-hands-helping text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white leading-tight">Pengabdian KKN 12 UNISLA</h3>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed flex-grow">
+                        Melaksanakan kegiatan pengabdian di SDN 1 Ketapang Telu dengan menginisiasi program budidaya Tanaman Obat Keluarga (TOGA), serta melakukan rekapitulasi data dan UMKM lokal secara menyeluruh di Dusun Ketapang, Soklen, Pupuk, dan Mediyeng.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dokumentasi Section -->
+    <section id="dokumentasi" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-center">
+                <span class="text-emerald-500 mr-2">#</span>Galeri Dokumentasi
+            </h2>
+            <p class="text-slate-400 text-center mb-12 max-w-2xl mx-auto">Dokumentasi hasil karya, kegiatan organisasi, dan pengalaman lapangan yang pernah saya ikuti.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dokumentasi Item 1 -->
+                <div class="group relative rounded-xl overflow-hidden border border-slate-700 shadow-lg aspect-[4/3] bg-slate-800 flex items-center justify-center">
+                    <div class="text-center text-slate-500 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-laptop-code text-4xl mb-3"></i>
+                        <p class="font-medium text-sm">Aplikasi Sentimen Flask</p>
+                    </div>
+                    <div class="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-emerald-400 font-semibold border border-emerald-500/50 px-4 py-2 rounded-lg bg-emerald-500/10">Lihat Detail</span>
+                    </div>
+                </div>
+                
+                <!-- Dokumentasi Item 2 -->
+                <div class="group relative rounded-xl overflow-hidden border border-slate-700 shadow-lg aspect-[4/3] bg-slate-800 flex items-center justify-center">
+                    <div class="text-center text-slate-500 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-users text-4xl mb-3"></i>
+                        <p class="font-medium text-sm">Kegiatan Organisasi SPK</p>
+                    </div>
+                    <div class="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-emerald-400 font-semibold border border-emerald-500/50 px-4 py-2 rounded-lg bg-emerald-500/10">Lihat Detail</span>
+                    </div>
+                </div>
+
+                <!-- Dokumentasi Item 3 -->
+                <div class="group relative rounded-xl overflow-hidden border border-slate-700 shadow-lg aspect-[4/3] bg-slate-800 flex items-center justify-center">
+                    <div class="text-center text-slate-500 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-seedling text-4xl mb-3"></i>
+                        <p class="font-medium text-sm">Pengabdian KKN TOGA</p>
+                    </div>
+                    <div class="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-emerald-400 font-semibold border border-emerald-500/50 px-4 py-2 rounded-lg bg-emerald-500/10">Lihat Detail</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Pratinjau CV -->
+    <div id="cvModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-800 w-11/12 max-w-3xl rounded-xl border border-slate-700 shadow-2xl flex flex-col max-h-[90vh]">
+            <div class="px-6 py-4 border-b border-slate-700 flex justify-between items-center bg-slate-800/50 rounded-t-xl">
+                <h3 class="text-lg font-bold text-white"><i class="fas fa-file-pdf text-red-400 mr-2"></i> Pratinjau Curriculum Vitae</h3>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white transition-colors p-2">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto bg-slate-900/50 flex-grow custom-scrollbar">
+                <div class="bg-white text-slate-800 mx-auto w-full max-w-2xl min-h-[500px] shadow-lg rounded p-8 sm:p-10 font-sans relative">
+                    <div class="border-b-2 border-slate-800 pb-4 mb-6">
+                        <h1 class="text-3xl font-bold uppercase text-slate-900">M. Khafidz Abdullah</h1>
+                        <p class="text-emerald-600 font-semibold text-lg">Software Developer & Data Enthusiast</p>
+                        <div class="flex gap-4 mt-2 text-sm text-slate-600">
+                            <span><i class="fas fa-envelope"></i> mkhafidabdullah@gmail.com</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Lamongan, Jawa Timur</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-slate-900 border-b border-slate-300 mb-3 uppercase text-sm tracking-wider">Pendidikan</h2>
+                        <div class="mb-2">
+                            <div class="flex justify-between font-semibold">
+                                <span>Universitas Islam Lamongan</span>
+                                <span>2022 - 2026</span>
+                            </div>
+                            <div class="italic text-sm">S1 Teknik Informatika</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-slate-900 border-b border-slate-300 mb-3 uppercase text-sm tracking-wider">Pengalaman & Proyek</h2>
+                        <ul class="list-disc pl-5 text-sm space-y-2">
+                            <li><strong>Analisis Sentimen KemenkeuRI:</strong> Membangun model SVM untuk klasifikasi opini publik (Akurasi: 88.78%).</li>
+                            <li><strong>Sistem Pendukung Keputusan:</strong> Mengembangkan SPK metode SAW untuk seleksi atlet.</li>
+                            <li><strong>Riset NLP:</strong> Analisis ulasan e-commerce (Naïve Bayes) & YouTube (K-NN, IndoBERT).</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-slate-900 border-b border-slate-300 mb-3 uppercase text-sm tracking-wider">Keahlian</h2>
+                        <p class="text-sm">Python, Flask, Laravel, Machine Learning, NLP, SVM, Naïve Bayes, K-NN, Technical Writing.</p>
+                    </div>
+                    
+                    <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+                        <i class="fas fa-file-alt text-9xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-6 py-4 border-t border-slate-700 bg-slate-800/50 rounded-b-xl flex justify-end gap-3">
+                <button onclick="closeModal()" class="px-4 py-2 rounded-lg border border-slate-600 text-slate-300 hover:bg-slate-700 transition-colors">Tutup</button>
+                <a href="#" onclick="alert('Ini adalah tombol unduh simulasi. File CV asli belum ditautkan.'); return false;" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium transition-colors flex items-center gap-2">
+                    <i class="fas fa-download"></i> Unduh PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontak & Footer Section -->
+    <footer id="kontak" class="bg-slate-950 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-white mb-6">Mari Terhubung</h2>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                Tertarik untuk berkolaborasi dalam proyek pengembangan web, pengolahan data, atau sekadar berdiskusi tentang teknologi? Silakan hubungi saya melalui platform di bawah ini.
+            </p>
+            
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="https://wa.me/6285230224618?text=Halo%20Khafidz,%20saya%20melihat%20portofolio%20Anda" target="_blank" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-emerald-500 hover:bg-emerald-600 hover:text-white hover:border-emerald-500 transition-all shadow-lg hover:-translate-y-1 group">
+                    <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/m-khafidz-abdullah-aa0599443" target="_blank" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-emerald-500 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all shadow-lg hover:-translate-y-1 group">
+                    <i class="fab fa-linkedin-in text-2xl group-hover:scale-110 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="text-slate-500 text-sm border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; <span id="year"></span> M. Khafidz Abdullah. Hak Cipta Dilindungi.</p>
+                <p class="font-mono text-xs">Dibuat dengan Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logika JavaScript -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+                navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.style.background = 'rgba(15, 23, 42, 0.85)';
+            }
+        });
+
+        const modal = document.getElementById('cvModal');
+        function openModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; 
+            }, 300);
+        }
+
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
